@@ -2,7 +2,27 @@
 #define MBED_VL6180_H
 
 #include "mbed.h"
-
+/** VL6180 control class.
+ *
+ * Example:
+ * @code
+ * //Update pc terminal every half second with range reading
+ * #include "VL6180.h"
+ * #include "mbed.h"
+ *
+ * VL6180 rf(p9, p10); //I2C sda and scl
+ * Serial pc(USBTX, USBRX); //USB serial
+ *
+ * int main() {
+ *   float reading;
+ *   while(1) {
+ *      reading = rf;
+ *      pc.printf("Read %4.1f cm\n", reading);
+ *      wait(0.5);
+ *  }
+ * }
+ * @endcode
+ */
 class VL6180 {
 public:
     /** Create a VL6180 object at I2C address 0x29 (7 bit).
