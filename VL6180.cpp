@@ -59,7 +59,7 @@ float VL6180::read() {
     writeI2C(0x18, 0x01);
     
     status = readI2C(0x4F);
-    while((status & 0x2) != 4) {
+    while((status & 0x7) != 4) {
         status = readI2C(0x4F);
     }
     
