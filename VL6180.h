@@ -18,7 +18,7 @@ public:
      */
     float read();
     
-    /* Float cast is shorthand for read() */
+    /** Float cast is shorthand for read() */
     operator float();
     
 private:
